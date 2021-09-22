@@ -1,0 +1,349 @@
+//Create a button-click event to start the quiz. 
+onEvent("button_startQuiz", "click", function( ) {
+  setScreen("screen_quizQ01");
+});
+
+//Create events for when the user clicks the button on their results screen to try again:
+//    1) show the start screen
+//    2) reset the score variables to 0 using the "resetScore" function
+onEvent("button_tryAgainA1", "click", function( ) {
+  setScreen("screen_start");
+  resetScore();
+});
+onEvent("button_tryAgainA2", "click", function( ) {
+  setScreen("screen_start");
+  resetScore();
+});
+onEvent("button_tryAgainA3", "click", function( ) {
+  setScreen("screen_start");
+  resetScore();
+});
+onEvent("button_tryAgainA4", "click", function( ) {
+  setScreen("screen_start");
+  resetScore();
+});
+
+
+//********************PRE-BUILT CODE********************
+//The code below has already been built for you!
+//The descriptions tell you what each part is
+//and what it does.
+
+
+//Variables that hold the quiz score.
+var scoreA = 0;
+var scoreB = 0;
+var scoreC = 0;
+var scoreD = 0;
+
+
+//Function that:
+//    1) determines which score variable (a-d) has the highest score
+//    2) displays the corresponding results screen at the end of the quiz
+function resultsScreen() {
+  if (scoreA > (scoreB && scoreC && scoreD)) {
+  setScreen("screen_resultsA");
+  } else if ((scoreB > (scoreA && scoreC && scoreD))) {
+  setScreen("screen_resultsB");
+  } else if ((scoreC > (scoreA && scoreB && scoreD))) {
+  setScreen("screen_resultsC");
+  } else {
+  setScreen("screen_resultsD");
+  }
+}
+
+
+//Events that:
+//    1) tally points for questions 1-4 based on answer selected
+//    2) move to the next question screen
+
+//For question 1
+onEvent("button_Q01a", "click", function( ) {
+  addScoreA();
+  setScreen("screen_quizQ02");
+});
+onEvent("button_Q01b", "click", function( ) {
+  addScoreB();
+  setScreen("screen_quizQ02");
+});
+onEvent("button_Q01c", "click", function( ) {
+  addScoreC();
+  setScreen("screen_quizQ02");
+});
+onEvent("button_Q01d", "click", function( ) {
+  addScoreD();
+  setScreen("screen_quizQ02");
+});
+
+//For question 2
+onEvent("button_Q02a", "click", function( ) {
+  addScoreA();
+  setScreen("screen_quizQ03");
+});
+onEvent("button_Q02b", "click", function( ) {
+  addScoreB();
+  setScreen("screen_quizQ03");
+});
+onEvent("button_Q02c", "click", function( ) {
+  addScoreC();
+  setScreen("screen_quizQ03");
+});
+onEvent("button_Q02d", "click", function( ) {
+  addScoreD();
+  setScreen("screen_quizQ03");
+});
+
+//For question 3
+onEvent("button_Q03a", "click", function( ) {
+  addScoreA();
+  setScreen("screen_quizQ04");
+});
+onEvent("button_Q03b", "click", function( ) {
+  addScoreB();
+  setScreen("screen_quizQ04");
+});
+onEvent("button_Q03c", "click", function( ) {
+  addScoreC();
+  setScreen("screen_quizQ04");
+});
+onEvent("button_Q03d", "click", function( ) {
+  addScoreD();
+  setScreen("screen_quizQ04");
+});
+
+//For question 4
+onEvent("button_Q04a", "click", function( ) {
+  addScoreA();
+  setScreen("screen_quizQ05");
+});
+onEvent("button_Q04b", "click", function( ) {
+  addScoreB();
+  setScreen("screen_quizQ05");
+});
+onEvent("button_Q04c", "click", function( ) {
+  addScoreC();
+  setScreen("screen_quizQ05");
+});
+onEvent("button_Q04d", "click", function( ) {
+  addScoreD();
+  setScreen("screen_quizQ05");
+});
+
+//Events that:
+//    1) tally points for question 5
+//    2) display the correct results screen based on the final score tally
+onEvent("button_Q05a", "click", function( ) {
+  addScoreA();
+  resultsScreen();
+});
+onEvent("button_Q05b", "click", function( ) {
+  addScoreB();
+  resultsScreen();
+});
+onEvent("button_Q05c", "click", function( ) {
+  addScoreC();
+  resultsScreen();
+});
+onEvent("button_Q05d", "click", function( ) {
+  addScoreD();
+  resultsScreen();
+});
+
+//Events to show the curated homepage when the user clicks the home button on their results screen.
+onEvent("button_takeMeHomeA", "click", function( ) {
+  setScreen("screen_curatedHomeA");
+});
+onEvent("button_takeMeHomeB", "click", function( ) {
+  setScreen("screen_curatedHomeB");
+});
+onEvent("button_takeMeHomeC", "click", function( ) {
+  setScreen("screen_curatedHomeC");
+});
+onEvent("button_takeMeHomeD", "click", function( ) {
+  setScreen("screen_curatedHomeD");
+});
+
+
+//Functions that add 1 point to the score variables.
+//For "a" answers.
+function addScoreA() {
+  scoreA = scoreA + 1;
+}
+
+//For "b" answers.
+function addScoreB() {
+  scoreB = scoreB + 1;
+}
+
+//For "c" answers.
+function addScoreC() {
+  scoreC = scoreC + 1;
+}
+
+//For "d" answers.
+function addScoreD() {
+  scoreD = scoreD + 1;
+}
+
+//Function that resets the score variables to 0.
+function resetScore() {
+  scoreA = 0;
+  scoreB = 0;
+  scoreC = 0;
+  scoreD = 0;
+}
+
+
+// 
+onEvent("image_collProduct1A", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+onEvent("image_collProduct2A", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+onEvent("image_collProduct3A", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+onEvent("image_forYouProductA", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+
+onEvent("image_collProduct1B", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+onEvent("image_collProduct2B", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+onEvent("image_collProduct3B", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+onEvent("image_forYouProductB", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+
+onEvent("image_collProduct1C", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+onEvent("image_collProduct2C", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+onEvent("image_collProduct3C", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+onEvent("image_forYouProductC", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+
+onEvent("image_collProduct1D", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+onEvent("image_collProduct2D", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+onEvent("image_collProduct3D", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+onEvent("image_forYouProductD", "click", function( ) {
+  setScreen("screen_productPricing");
+});
+
+
+//Size To Price
+onEvent("size_5", "click", function( ) {
+  size1();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_5.5", "click", function( ) {
+  size1();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_6", "click", function( ) {
+  size1();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_6.5", "click", function( ) {
+  size1();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_7", "click", function( ) {
+  size1();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_7.5", "click", function( ) {
+  size1();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_8", "click", function( ) {
+  size2();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_8.5", "click", function( ) {
+  size2();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_9", "click", function( ) {
+  size2();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_9.5", "click", function( ) {
+  size2();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_10", "click", function( ) {
+  size2();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_10.5", "click", function( ) {
+  size2();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_11", "click", function( ) {
+  size3();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_11.5", "click", function( ) {
+  size3();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_12", "click", function( ) {
+  size3();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_12.5", "click", function( ) {
+  size3();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_13", "click", function( ) {
+  size3();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("size_13.5", "click", function( ) {
+  size3();
+  setNumber("total_Amount", getNumber("label_priceShoePrice") + getNumber("label_priceTax") + getNumber("label_priceDelivery"));
+});
+onEvent("buy_Button", "click", function( ) {
+  setScreen("screen_start");
+  resetLabels();
+});
+
+//Size To Price Levels 
+function size1() {
+  setText("label_priceShoePrice", "70");
+  setText("label_priceTax", "20");
+  setText("label_priceDelivery", "10");
+}
+function size2() {
+  setText("label_priceShoePrice", "80");
+  setText("label_priceTax", "25");
+  setText("label_priceDelivery", "15");
+}
+function size3() {
+  setText("label_priceShoePrice", "90");
+  setText("label_priceTax", "30");
+  setText("label_priceDelivery", "20");
+}
+function resetLabels() {
+  setText("label_priceShoePrice", "");
+  setText("label_priceTax", "");
+  setText("label_priceDelivery", "");
+}
